@@ -1,0 +1,10 @@
+<h1>Player Input</h1>
+<input type="text" #nameInput placeholder="Enter a name">
+<button (click)="addName(nameInput.value)">Add Player</button>
+<p *ngIf="dupNameError">Player Already Entered</p>
+<ul>
+  <li *ngFor="let name of names">
+    {{name}}
+  </li>
+</ul>
+<button [disabled]="names.length < 6" (click)="setPlayerNames(this.names)">Start</button>
